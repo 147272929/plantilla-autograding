@@ -1,0 +1,63 @@
+name: Calificación automática
+
+on:
+  push:
+  repository_dispatch:
+  workflow_dispatch:
+
+permissions:
+  checks: write
+  actions: read
+  contents: read
+
+jobs:
+  calificar:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+      - name: Descargar código
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar dependencias
+        run: pip install -r requirements.txt
+
+      - name: Ejercicio 1 - Números pares
+        id: ejercicio-1
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Ejercicio 1 - Números pares
+          command: python -m pytest tests/test_ejercicio1.py -v
+          timeout: 5
+          max-score: 30
+
+      - name: Ejercicio 2 - Factorial
+        id: ejercicio-2
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Ejercicio 2 - Factorial
+          command: python -m pytest tests/test_ejercicio2.py -v
+          timeout: 5
+          max-score: 30
+
+      - name: Ejercicio 3 - Palíndromos
+        id: ejercicio-3
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Ejercicio 3 - Palíndromos
+          command: python -m pytest tests/test_ejercicio3.py -v
+          timeout: 5
+          max-score: 40
+
+      - name: Reporte de calificación
+        uses: classroom-resources/autograding-grading-reporter@v1
+        env:
+          EJERCICIO-1_RESULTS: "${{ steps.ejercicio-1.outputs.result }}"
+          EJERCICIO-2_RESULTS: "${{ steps.ejercicio-2.outputs.result }}"
+          EJERCICIO-3_RESULTS: "${{ steps.ejercicio-3.outputs.result }}"
+        with:
+          runners: ejercicio-1,ejercicio-2,ejercicio-3
