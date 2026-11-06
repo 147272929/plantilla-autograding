@@ -14,4 +14,4 @@ def test_texto_vacio():
 
 
 def test_con_tildes():
-    assert es_palindromo("Ámala") is True, '"Ámala" es palíndromo: debes ignorar las tildes (Á = a)'
+    assert es_palindromo("Allí ves Sevilla") is True, '"Allí ves Sevilla" es palíndromo: debes ignorar las tildes (í = i)'
