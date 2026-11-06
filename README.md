@@ -4,6 +4,17 @@ Este repositorio contiene 3 ejercicios de Python. Cada vez que haces `git push`,
 GitHub Actions ejecuta pruebas automáticas y te dice **en minutos** qué está bien
 y qué debes corregir. Ya no tienes que esperar a que el docente revise tu entrega.
 
+## Cómo empezar (una sola vez)
+
+1. Arriba en esta página, pulsa **Use this template → Create a new repository**.
+2. Ponle de nombre `tarea-programacion-<tu-usuario>` y elige **Private**.
+3. En tu nuevo repositorio ve a **Settings → Collaborators → Add people** y agrega
+   al usuario de GitHub de tu docente, para que pueda ver tu trabajo y tus notas.
+4. Clona **tu** repositorio en tu computadora y trabaja ahí:
+   ```bash
+   git clone https://github.com/<tu-usuario>/tarea-programacion-<tu-usuario>.git
+   ```
+
 ## Ejercicios
 
 | Ejercicio | Archivo | Puntos |

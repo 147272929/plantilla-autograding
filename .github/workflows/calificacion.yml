@@ -2,7 +2,6 @@ name: Calificación automática
 
 on:
   push:
-  repository_dispatch:
   workflow_dispatch:
 
 permissions:
@@ -13,7 +12,6 @@ permissions:
 jobs:
   calificar:
     runs-on: ubuntu-latest
-    if: github.actor != 'github-classroom[bot]'
     steps:
       - name: Descargar código
         uses: actions/checkout@v5
