@@ -6,7 +6,7 @@ def test_frase_palindromo():
 
 
 def test_no_palindromo():
-    assert es_palindromo("Programación") is False
+    assert es_palindromo("Programación") is False, '"Programación" no es palíndromo: debe devolver False'
 
 
 def test_texto_vacio():

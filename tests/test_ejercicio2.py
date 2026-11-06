@@ -8,7 +8,7 @@ def test_factorial_de_cero():
 
 
 def test_factorial_de_uno():
-    assert factorial(1) == 1
+    assert factorial(1) == 1, "1! = 1"
 
 
 def test_factorial_de_cinco():
@@ -16,9 +16,12 @@ def test_factorial_de_cinco():
 
 
 def test_factorial_grande():
-    assert factorial(10) == 3628800
+    assert factorial(10) == 3628800, "10! = 3628800"
 
 
 def test_negativo_lanza_error():
-    with pytest.raises(ValueError):
+    try:
         factorial(-1)
+    except ValueError:
+        return
+    pytest.fail("Con un número negativo debes lanzar ValueError (usa: raise ValueError)")

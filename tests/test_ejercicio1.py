@@ -14,4 +14,4 @@ def test_negativos_y_cero():
 
 
 def test_sin_pares():
-    assert contar_pares([1, 3, 5]) == 0
+    assert contar_pares([1, 3, 5]) == 0, "En [1, 3, 5] no hay pares: debe devolver 0"

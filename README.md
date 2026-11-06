@@ -24,10 +24,10 @@ Lee el comentario al inicio de cada archivo y reemplaza el `pass` por tu soluci�
    git push
    ```
 2. En GitHub, abre la pestaña **Actions** de tu repositorio.
-3. Entra a la última ejecución de **Calificación automática**.
-   - ✅ verde: el ejercicio pasó todas las pruebas.
-   - ❌ rojo: abre el paso del ejercicio para ver qué prueba falló y el mensaje de ayuda.
-4. Al final verás tu puntaje total (sobre 100).
+3. Entra a la última ejecución de **Calificación automática** (tarda ~20 segundos).
+4. Baja hasta **Resultado de tu entrega**: verás una tabla con ✅/❌ por ejercicio,
+   tu puntaje total (sobre 100) y la lista **Qué debes corregir** con un mensaje
+   de ayuda por cada prueba que falló.
 
 Puedes hacer `push` todas las veces que quieras antes de la fecha de entrega.
 

@@ -53,6 +53,12 @@ jobs:
           timeout: 5
           max-score: 40
 
+      - name: Retroalimentación para el estudiante
+        if: always()
+        run: |
+          python -m pytest --junitxml=reporte.xml -q || true
+          python .github/scripts/resumen.py reporte.xml
+
       - name: Reporte de calificación
         uses: classroom-resources/autograding-grading-reporter@v1
         env:
